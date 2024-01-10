@@ -1,6 +1,8 @@
 <template>
   <el-container class="app-container">
-    <el-header>this is header</el-header>
+    <el-header>
+      <el-image style="width: 4%;" :src="appico" fit="fill"/>
+    </el-header>
     <el-container class="mid-area">
       <el-aside>
         <el-scrollbar>
@@ -40,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-
+import appico from "./assets/app.ico"
 </script>
 
 <style scoped>
@@ -49,12 +51,9 @@
 }
 
 .el-header {
-  /* background: red; */
   height: 10%;
-  text-align: center;
-  text-align-last: auto;
-  border-bottom: 1px;
-  background-color: rgb(221, 188, 188);
+  border-bottom: 1cap;
+
 }
 
 .mid-area {
@@ -64,22 +63,15 @@
 .el-footer {
   height: 10%;
   text-align: center;
-  border-top: 1px solid #e8eaec;
-  background-color: #c53698;
+  background-color: rgb(11, 196, 229);
 }
 
 .el-aside {
   width: 150px;
   text-align: center;
-  border-right: 1px solid #e8eaec;
-  background-color: aquamarine;
-  margin: 0px;
-  padding-left: 0px;
 }
 
 .el-main {
   text-align: center;
-  border-left: 1px solid #e8eaec;
-  border-top: 1px solid #e8eaec;
-  border-bottom: 1px solid #e8eaec;
-}</style>
+}
+</style>
