@@ -1,8 +1,6 @@
 <template>
   <el-container class="app-container">
-    <el-header>
-      <el-image style="width: 4%;" :src="appico" fit="fill"/>
-    </el-header>
+    <el-header></el-header>
     <el-container class="mid-area">
       <el-aside>
         <el-scrollbar>
@@ -37,24 +35,28 @@
       </el-aside>
       <el-main>this is main</el-main>
     </el-container>
-    <el-footer>this is footer</el-footer>
+    <el-footer>
+      <div class="text-center py-6 text-xs">
+        <p>Made with ❤️ by WZQ</p>
+      </div>
+    </el-footer>
   </el-container>
 </template>
 
 <script lang="ts" setup>
-import appico from "./assets/app.ico"
+
 </script>
 
 <style scoped>
 .app-container {
   height: 100%;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .el-header {
   height: 10%;
-  border-bottom: 1cap;
-
+  border-bottom: solid 1px #dcdfe6;
+  font-size: 16px;
 }
 
 .mid-area {
@@ -64,15 +66,23 @@ import appico from "./assets/app.ico"
 .el-footer {
   height: 10%;
   text-align: center;
-  background-color: rgb(11, 196, 229);
+  border-top: solid 1px #dcdfe6;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .el-aside {
   width: 20%;
   text-align: center;
+  border-right: solid 1px #dcdfe6;
+}
+
+.el-menu {
+  font-weight: 600;
 }
 
 .el-main {
   text-align: center;
+  font-size: 16px;
 }
 </style>
