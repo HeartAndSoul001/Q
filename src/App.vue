@@ -48,6 +48,7 @@ import appico from "./assets/app.ico"
 <style scoped>
 .app-container {
   height: 100%;
+  background-color: white;
 }
 
 .el-header {
@@ -67,7 +68,7 @@ import appico from "./assets/app.ico"
 }
 
 .el-aside {
-  width: 150px;
+  width: 20%;
   text-align: center;
 }
 
