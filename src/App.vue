@@ -52,7 +52,7 @@ import appico from "./assets/app.ico"
 
 .el-header {
   height: 10%;
-  border-bottom: solid 1cap;
+  border-bottom: 1cap;
 
 }
 
