@@ -31,8 +31,10 @@
         "fullscreen": false,
         "resizable": true,
         "title": "小Q助手",
-        "width": 800,
-        "height": 600,
+        "width": 1000,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 500,
         "center": true,
         "theme":"Dark",
         "transparent": true

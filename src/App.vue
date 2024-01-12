@@ -33,7 +33,7 @@
           </el-menu>
         </el-scrollbar>
       </el-aside>
-      <el-main>this is main</el-main>
+      <el-main><subnetsCalcu /></el-main>
     </el-container>
     <el-footer>
       <div class="text-center py-6 text-xs">
@@ -44,6 +44,9 @@
 </template>
 
 <script lang="ts" setup>
+import subnetsCalcu from './components/subnetsCalcu.vue';
+
+const content = "subnetsCalcu"
 
 </script>
 
@@ -72,7 +75,7 @@
 }
 
 .el-aside {
-  width: 20%;
+  width: 15%;
   text-align: center;
   border-right: solid 1px #dcdfe6;
 }
