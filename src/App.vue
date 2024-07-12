@@ -10,13 +10,13 @@
                 <font-awesome-icon icon="fa-solid fa-toolbox" size="lg" fixed-width pull="left" /> IP工具
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1"><font-awesome-icon icon="fa-solid fa-calculator" size="lg" fixed-width
+                <el-menu-item index="1-1" @click="content=subnetsCalcu"><font-awesome-icon icon="fa-solid fa-calculator" size="lg" fixed-width
                     pull="left" />掩码计算</el-menu-item>
-                <el-menu-item index="1-2"><font-awesome-icon icon="fa-solid fa-retweet" size="lg" fixed-width
+                <el-menu-item index="1-2" @click="content=formTrans"><font-awesome-icon icon="fa-solid fa-retweet" size="lg" fixed-width
                     pull="left" />格式转换</el-menu-item>
-                <el-menu-item index="1-3"><font-awesome-icon icon="fa-solid fa-object-group" size="lg" fixed-width
+                <el-menu-item index="1-3" @click="content=networkHandle"><font-awesome-icon icon="fa-solid fa-object-group" size="lg" fixed-width
                     pull="left" />网段处理</el-menu-item>
-                <el-menu-item index="1-4"><font-awesome-icon icon="fa-solid fa-binoculars" size="lg" fixed-width
+                <el-menu-item index="1-4" @click="content=ipDetect"><font-awesome-icon icon="fa-solid fa-binoculars" size="lg" fixed-width
                     pull="left" />地址探测</el-menu-item>
               </el-menu-item-group>
             </el-sub-menu>
@@ -33,7 +33,7 @@
           </el-menu>
         </el-scrollbar>
       </el-aside>
-      <el-main><subnetsCalcu /></el-main>
+      <el-main><{{ content }} /></el-main>
     </el-container>
     <el-footer>
       <div class="text-center py-6 text-xs">
@@ -45,8 +45,11 @@
 
 <script lang="ts" setup>
 import subnetsCalcu from './components/subnetsCalcu.vue';
+import formTrans from './components/formTrans.vue';
+import networkHandle from './components/networkHandle.vue';
+import ipDetect from './components/ipDetect.vue';
 
-const content = "subnetsCalcu"
+const content = subnetsCalcu
 
 </script>
 

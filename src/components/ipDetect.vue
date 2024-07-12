@@ -1,6 +1,6 @@
 <template>
     <div id="">
-        <p>subnetsCalcu</p>
+        <p>ipDetect</p>
     </div>
 </template>
 
