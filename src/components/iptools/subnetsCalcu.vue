@@ -3,14 +3,14 @@
       <div class="calculator-header">
         <div class="ip-input-container">
           <div class="ip-segments">
-            <div v-for="(part, index) in ipParts" :key="index" class="ip-segment">
+            <div v-for="index in ipParts.length" :key="index-1" class="ip-segment">
               <el-input
                 v-model="ipParts[index]"
-                :ref="(el) => { if(el) inputRefs[index] = el }"
+                :ref="(el: HTMLElement | null) => { if(el) inputRefs[index] = el }"
                 @focus="handleFocus(index)"
                 @input="validateIpPart(index)"
                 @keyup.enter="focusNext(index)"
-                @keydown="(e) => handleKeyDown(e, index)"
+                @keydown="(e: KeyboardEvent) => handleKeyDown(e, index)"
                 @paste.prevent="handlePaste"
                 maxlength="3"
                 :class="{ 'is-error': ipErrors[index] }"
@@ -58,7 +58,6 @@
   <script setup lang="ts">
   import { ref, computed, onMounted } from 'vue'
   import { invoke } from '@tauri-apps/api/tauri'
-  import type { Ref } from 'vue'
   
   interface SubnetInfo {
     netmask: string
