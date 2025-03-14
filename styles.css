@@ -1,0 +1,6 @@
+.table-container {
+  // ...existing code...
+  overflow-x: hidden; /* 添加此行 */
+  padding-bottom: 1px; /* 添加此行 */
+  // ...existing code...
+}

@@ -4,36 +4,28 @@
     <el-container class="mid-area">
       <el-aside>
         <el-scrollbar>
-          <el-menu>
+          <el-menu :router="true">
             <el-sub-menu index="1">
               <template #title>
                 <font-awesome-icon icon="fa-solid fa-toolbox" size="lg" fixed-width pull="left" /> IP工具
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="content=subnetsCalcu"><font-awesome-icon icon="fa-solid fa-calculator" size="lg" fixed-width
-                    pull="left" />掩码计算</el-menu-item>
-                <el-menu-item index="1-2" @click="content=formTrans"><font-awesome-icon icon="fa-solid fa-retweet" size="lg" fixed-width
-                    pull="left" />格式转换</el-menu-item>
-                <el-menu-item index="1-3" @click="content=networkHandle"><font-awesome-icon icon="fa-solid fa-object-group" size="lg" fixed-width
-                    pull="left" />网段处理</el-menu-item>
-                <el-menu-item index="1-4" @click="content=ipDetect"><font-awesome-icon icon="fa-solid fa-binoculars" size="lg" fixed-width
-                    pull="left" />地址探测</el-menu-item>
+                <el-menu-item index="1-1" :route="{ path: '/' }">
+                  <font-awesome-icon icon="fa-solid fa-calculator" size="lg" fixed-width pull="left" />子网计算器
+                </el-menu-item>
+                <el-menu-item index="1-2" :route="{ path: '/greet' }">
+                  <font-awesome-icon icon="fa-solid fa-retweet" size="lg" fixed-width pull="left" />格式转换
+                </el-menu-item>
+                <!-- 其他菜单项 -->
               </el-menu-item-group>
             </el-sub-menu>
-            <el-sub-menu index="2">
-              <template #title>
-                <font-awesome-icon icon="fa-solid fa-file-contract" size="lg" fixed-width pull="left" />合同管理
-              </template>
-              <el-menu-item-group>
-                <el-menu-item index="2-1">合同录入</el-menu-item>
-                <el-menu-item index="2-2">合同执行</el-menu-item>
-                <el-menu-item index="2-3">合同归档</el-menu-item>
-              </el-menu-item-group>
-            </el-sub-menu>
+            <!-- 其他子菜单 -->
           </el-menu>
         </el-scrollbar>
       </el-aside>
-      <el-main><{{ content }} /></el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
     <el-footer>
       <div class="text-center py-6 text-xs">
@@ -44,13 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-import subnetsCalcu from './components/subnetsCalcu.vue';
-import formTrans from './components/formTrans.vue';
-import networkHandle from './components/networkHandle.vue';
-import ipDetect from './components/ipDetect.vue';
-
-const content = subnetsCalcu
-
+import 'element-plus/es/components/tree-select/src/tree-select-option.mjs';
 </script>
 
 <style scoped>
